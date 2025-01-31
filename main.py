@@ -3,6 +3,7 @@ from asteroidfield import AsteroidField
 from constants import *
 from player import Player
 from asteroid import Asteroid
+# from circleshape import CircleShape
 
 
 def main(screen_width, screen_height):
@@ -43,6 +44,9 @@ def main(screen_width, screen_height):
 
         for thing in drawable:
             thing.draw(screen)
+        
+        for asteroid in asteroids:
+            asteroid.check_collision(player)
 
         pygame.display.flip()
 
